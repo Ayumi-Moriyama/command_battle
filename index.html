@@ -21,6 +21,14 @@
       <button id="level1_start">Lv1</button>
     </section>
 
+    <section>
+      <button id="level2_start">Lv2</button>
+    </section>
+
+    <section>
+      <button id="level3_start">Lv3</button>
+    </section>
+
     <section class="enemy">
       <h2 id="enemyName">敵</h2>
       <img id="enemyImage" src="./images/syuutyuu.png" alt="">
@@ -28,23 +36,23 @@
 
     <div class="hp">
       <div>HP
-        <meter id="currentEnemyHp" min="0" max="20" value='enemyStatus_1["hp"]'></meter>
+        <meter id="currentEnemyHp" min="0" max="50" value='enemyStatus_1["hp"]'></meter>
       </div>
 
       <section>
         <p id="jikkyou">実況</p>
       </section>
 
-      <!-- <section class="player"> -->
-      <!-- <h2 id="playerName">自分</h2> -->
-      <!-- </section> -->
+      <section class="player">
+        <h2 id="playerName">自分</h2>
+      </section>
 
       <div class="hp">
         <div>HP
-          <meter id="currentPlayerHp" min="0" max="30" value='playerStatus_1["hp"]'></meter>
+          <meter id="currentPlayerHp" min="0" max="50" value='playerStatus_1["hp"]'></meter>
         </div>
         <div>MP
-          <meter id="currentPlayerMp" min="0" max="5" value='playerStatus_1["mp"]'></meter>
+          <meter id="currentPlayerMp" min="0" max="10" value='playerStatus_1["mp"]'></meter>
         </div>
       </div>
 
@@ -57,15 +65,33 @@
 
 
       <section>
-        <div>
-          <button id="jisouryoku">自走力</button>
-          <button id="p2p">P2P</button>
-          <button>チューター</button>
+        <div>Lv1攻撃
+          <button id="jisouryoku_1">自走力</button>
         </div>
-        <div>回復
-          <button id="detox">
+        <div>Lv2攻撃
+          <button id="jisouryoku_2">自走力</button>
+          <button id="p2p_2">P2P</button>
+        </div>
+        <div>Lv3攻撃
+          <button id="jisouryoku_3">自走力</button>
+          <button id="p2p_3">P2P</button>
+          <button id="tutor">チューター</button>
+        </div>
+        <div>体力回復Lv1
+          <button id="ikinuki_1">息抜き</button>
+          </button>
+        </div>
+        <div>体力回復Lv2
+          <button id="ikinuki_2">息抜き</button>
+          <button id="detox_2">
             <p>デジタル<br>デトックス</p>
           </button>
+        </div>
+        <div>体力回復Lv3とやる気回復
+          <button id="ikinuki_3">息抜き</button>
+          <button id="detox_3">
+            <p>デジタル<br>デトックス</p>
+            <button id="nomikai">飲み会</button>
         </div>
       </section>
 
