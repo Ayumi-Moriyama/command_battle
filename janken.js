@@ -127,16 +127,11 @@ $(jisouryoku_1).on("click", function () {
     if (enemyStatus_1["hp"] < 0) {
         $("#jikkyou_1").text("おめでとう！");
         $("#jikkyou_2").text("あなたはねむけに打ち勝った！");
-        alert("勝利！");
         endGame = true;
         // 敵の体力が０以下になったら、敵の体力を０に再定義
         enemyStatus_1["hp"] = 0;
         $("#currentEnemyHp").val(enemyStatus_1["hp"]);
-        // if (enemyStatus_1["hp"] === 0) {
-
-        // }
-
-
+        location.href = "#syourisengen";
 
     } else if (playerStatus_1["hp"] < 0) {
         alert("敗北...");
@@ -258,11 +253,11 @@ $(jisouryoku_2).on("click", function () {
     if (enemyStatus_2["hp"] < 0) {
         $("#jikkyou_1").text("おめでとう！");
         $("#jikkyou_2").text("最後は自走力でゆうわくに打ち勝った！");
-        alert("勝利！");
         endGame = true;
         // 敵の体力が０以下になったら、敵の体力を０に再定義
         enemyStatus_2["hp"] = 0;
         $("#currentEnemyHp").val(enemyStatus_2["hp"]);
+        location.href = "#syourisengen";
 
     } else if (playerStatus_2["hp"] < 0) {
         alert("敗北...");
@@ -332,11 +327,11 @@ $(p2p_2).on("click", function () {
     if (enemyStatus_2["hp"] < 0) {
         $("#jikkyou_1").text("おめでとう！");
         $("#jikkyou_2").text("最後はP2Pの力でゆうわくに打ち勝った！");
-        alert("勝利！");
         endGame = true;
         // 敵の体力が０以下になったら、敵の体力を０に再定義
         enemyStatus_2["hp"] = 0;
         $("#currentEnemyHp").val(enemyStatus_2["hp"]);
+        location.href = "#syourisengen";
 
     } else if (playerStatus_2["hp"] < 0) {
         alert("敗北...");
@@ -462,12 +457,12 @@ $(jisouryoku_3).on("click", function () {
     // ゲーム終了条件
     if (enemyStatus_3["hp"] < 0) {
         $("#jikkyou_1").text("おめでとう！");
-        $("#jikkyou_2").text("最後は自走力でゆうわくに打ち勝った！");
-        alert("勝利！");
+        $("#jikkyou_2").text("最後は自走力で謎エラーを解決した！");
         endGame = true;
         // 敵の体力が０以下になったら、敵の体力を０に再定義
         enemyStatus_3["hp"] = 0;
         $("#currentEnemyHp").val(enemyStatus_3["hp"]);
+        location.href = "#syourisengen";
 
     } else if (playerStatus_3["hp"] < 0) {
         alert("敗北...");
@@ -537,11 +532,11 @@ $(p2p_3).on("click", function () {
     if (enemyStatus_3["hp"] < 0) {
         $("#jikkyou_1").text("おめでとう！");
         $("#jikkyou_2").text("最後はP2Pで謎エラーを解決した！");
-        alert("勝利！");
         endGame = true;
         // 敵の体力が０以下になったら、敵の体力を０に再定義
         enemyStatus_3["hp"] = 0;
         $("#currentEnemyHp").val(enemyStatus_3["hp"]);
+        location.href = "#syourisengen";
 
     } else if (playerStatus_3["hp"] < 0) {
         alert("敗北...");
@@ -605,11 +600,11 @@ $(tutor).on("click", function () {
     if (enemyStatus_3["hp"] < 0) {
         $("#jikkyou_1").text("おめでとう！");
         $("#jikkyou_2").text("最後はチューターのささやきで謎エラーを解決した！");
-        alert("勝利！");
         endGame = true;
         // 敵の体力が０以下になったら、敵の体力を０に再定義
         enemyStatus_3["hp"] = 0;
         $("#currentEnemyHp").val(enemyStatus_3["hp"]);
+        location.href = "#syourisengen";
 
     } else if (playerStatus_3["hp"] < 0) {
         alert("敗北...");

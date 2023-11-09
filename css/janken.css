@@ -4,22 +4,46 @@
 }
 
 button {
-  width: 100px;
+  width: 120px;
   height: 50px;
 }
 
 main {
-  max-width: 800px;
+  max-width: 900px;
   height: 100vh;
   margin: 0 auto;
 }
 
 section {
-  height: 100px;
+  height: 80px;
   width: 800px;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
+  margin-bottom: 50px;
+}
+
+.level_1 {
+  height: 200px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+}
+
+.level_2 {
+  height: 300px;
+  width: 500px;
+  display: flex;
+  justify-content: center;
+}
+
+.level_3 {
+  height: 300px;
+  width: 500px;
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
 }
 
 .jikkyou {
@@ -30,6 +54,6 @@ section {
 }
 
 .syouri {
-  margin-top: 300px;
+  margin-top: 600px;
   text-align: center;
 }
