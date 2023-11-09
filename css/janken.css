@@ -4,19 +4,56 @@
 }
 
 button {
-  width: 200px;
-  height: 70px;
+  width: 120px;
+  height: 50px;
 }
 
 main {
-  max-width: 480px;
+  max-width: 900px;
   height: 100vh;
   margin: 0 auto;
 }
 
 section {
-  height: calc(100vh/4);
+  height: 80px;
+  width: 800px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.level_1 {
+  height: 200px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+}
+
+.level_2 {
+  height: 300px;
+  width: 500px;
   display: flex;
   justify-content: center;
+}
+
+.level_3 {
+  height: 300px;
+  width: 500px;
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.jikkyou {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
   align-items: center;
+}
+
+.syouri {
+  margin-top: 600px;
+  text-align: center;
 }
