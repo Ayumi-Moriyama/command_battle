@@ -53,9 +53,19 @@ $("selecter").attr("name", "value");
 // 負けた回数をカウント
 let losecount = 0;
 
+// 最初はボタン非表示
+$(".level_1").hide();
+$(".level_2").hide();
+$(".level_3").hide();
+$(".hp").hide();
+$(".loseCounter").hide();
+
 // バトル１スタート時の処理
 $(level1_start).on("click", function () {
     let endGame = false;
+    $(".level_1").show();
+    $(".hp").show();
+    $(".loseCounter").show();
     $("#playerName").text(playerStatus_1["name"]);
     $("#enemyName").text(enemyStatus_1["name"]);
     $("#jikkyou_1").text("ねむけがあらわれた！");
@@ -77,7 +87,7 @@ $(jisouryoku_1).on("click", function () {
     $("#jikkyou_1").text("自走力を使った！");
     console.log("自走力を使った");
     // プレイヤーの攻撃
-    const attack_jisou_1 = playerStatus_1["jisouryoku"] * playerStatus_1["level"] * losecount + 0.5;
+    const attack_jisou_1 = playerStatus_1["jisouryoku"] * playerStatus_1["level"] * losecount + 1;
     console.log("わたしの攻撃力" + attack_jisou_1);
 
     //  敵の攻撃
@@ -120,7 +130,6 @@ $(jisouryoku_1).on("click", function () {
             endGame = true;
             console.log("大先生の教えにより敵に打ち勝った！");
         };
-
     };
 
     // ゲーム終了条件
@@ -134,23 +143,22 @@ $(jisouryoku_1).on("click", function () {
         location.href = "#syourisengen";
 
     } else if (playerStatus_1["hp"] < 0) {
-        alert("敗北...");
+        $("#jikkyou_1").text("残念！");
+        $("#jikkyou_2").text("あなたはねむけに負けてしまった・・・");
         endGame = true;
         // プレイヤーの体力が０以下になったら、体力を０に再定義
         playerStatus_1["hp"] = 0;
         $("#currentPlayerHp").val(playerStatus_1["hp"]);
-
+        location.href = "#haibokusengen";
         // } else if (losecount > 2) {
         //     // $(lose).text(losecount);
         //     endGame = true;
         //     console.log("大先生の教えにより敵に打ち勝った！");
-
     };
-
     // ゲーム終了したらボタン押せなくなる・・・ここはまだ効いてない
-    if (endGame) {
-        this.classList.add("deactive");
-    }
+    // if (endGame) {
+    //     this.classList.add("deactive");
+    // }
     // 自走力Lv1攻撃の最後のかっこ
 });
 
@@ -187,10 +195,12 @@ $(ikinuki_1).on("click", function () {
     // 息抜きLv1の最後のかっこ
 });
 
-
 // バトル2スタート時の処理
 $(level2_start).on("click", function () {
     let endGame = false;
+    $(".level_2").show();
+    $(".hp").show();
+    $(".loseCounter").show();
     $("#playerName").text(playerStatus_2["name"]);
     $("#enemyName").text(enemyStatus_2["name"]);
     $("#jikkyou_1").text("ゆうわくがあらわれた！");
@@ -210,7 +220,7 @@ $(jisouryoku_2).on("click", function () {
     $("#jikkyou_1").text("自走力を使った！");
     console.log("自走力を使った");
     // プレイヤーの攻撃
-    const attack_jisou_2 = playerStatus_2["jisouryoku"] * playerStatus_2["level"] * losecount + 0.5;
+    const attack_jisou_2 = playerStatus_2["jisouryoku"] * playerStatus_2["level"] * losecount + 1;
     console.log("わたしの攻撃力" + attack_jisou_2);
 
     //  敵の攻撃
@@ -260,11 +270,13 @@ $(jisouryoku_2).on("click", function () {
         location.href = "#syourisengen";
 
     } else if (playerStatus_2["hp"] < 0) {
-        alert("敗北...");
+        $("#jikkyou_1").text("残念！");
+        $("#jikkyou_2").text("あなたはゆうわくに負けてしまった・・・");
         endGame = true;
         // プレイヤーの体力が０以下になったら、体力を０に再定義
         playerStatus_2["hp"] = 0;
         $("#currentPlayerHp").val(playerStatus_2["hp"]);
+        location.href = "#haibokusengen";
 
     } else if (losecount > 4) {
         $(lose).text(losecount);
@@ -272,21 +284,19 @@ $(jisouryoku_2).on("click", function () {
         console.log("大先生の教えにより敵に打ち勝った！");
 
     }
-
     // ゲーム終了したらボタン押せなくなる・・・ここはまだ効いてない
-    if (endGame) {
-        this.classList.add("deactive");
-    }
+    // if (endGame) {
+    //     this.classList.add("deactive");
+    // }
     // 自走力Lv2攻撃の最後のかっこ
 });
-
 
 // 攻撃（p2p）
 $(p2p_2).on("click", function () {
     $("#jikkyou_1").text("P2Pを使った！");
     console.log("P2Pを使った");
     // プレイヤーの攻撃
-    const attack_p2p_2 = playerStatus_2["p2p"] * playerStatus_2["level"] * losecount + 0.5;
+    const attack_p2p_2 = playerStatus_2["p2p"] * playerStatus_2["level"] * losecount + 1;
     console.log("わたしの攻撃力" + attack_p2p_2);
     //  敵の攻撃
     const min = 1;
@@ -334,11 +344,13 @@ $(p2p_2).on("click", function () {
         location.href = "#syourisengen";
 
     } else if (playerStatus_2["hp"] < 0) {
-        alert("敗北...");
+        $("#jikkyou_1").text("残念！");
+        $("#jikkyou_2").text("あなたはゆうわくに負けてしまった・・・");
         endGame = true;
         // プレイヤーの体力が０以下になったら、体力を０に再定義
         playerStatus_2["hp"] = 0;
         $("#currentPlayerHp").val(playerStatus_2["hp"]);
+        location.href = "#haibokusengen";
 
     } else if (losecount > 4) {
         $(lose).text(losecount);
@@ -396,6 +408,9 @@ $(detox_2).on("click", function () {
 // バトル3スタート時の処理
 $(level3_start).on("click", function () {
     let endGame = false;
+    $(".level_3").show();
+    $(".hp").show();
+    $(".loseCounter").show();
     $("#playerName").text(playerStatus_3["name"]);
     $("#enemyName").text(enemyStatus_3["name"]);
     $("#jikkyou_1").text("謎エラーがあらわれた！");
@@ -415,7 +430,7 @@ $(jisouryoku_3).on("click", function () {
     $("#jikkyou_1").text("自走力を使った！");
     console.log("自走力を使った");
     // プレイヤーの攻撃
-    const attack_jisou_3 = playerStatus_3["jisouryoku"] * playerStatus_3["level"] * losecount + 0.5;
+    const attack_jisou_3 = playerStatus_3["jisouryoku"] * playerStatus_3["level"] * losecount + 1;
     console.log("わたしの攻撃力" + attack_jisou_3);
 
     //  敵の攻撃
@@ -465,11 +480,14 @@ $(jisouryoku_3).on("click", function () {
         location.href = "#syourisengen";
 
     } else if (playerStatus_3["hp"] < 0) {
+        $("#jikkyou_1").text("残念！");
+        $("#jikkyou_2").text("あなたは謎エラーを解決できなかった・・・");
         alert("敗北...");
         endGame = true;
         // プレイヤーの体力が０以下になったら、体力を０に再定義
         playerStatus_3["hp"] = 0;
         $("#currentPlayerHp").val(playerStatus_3["hp"]);
+        location.href = "#haibokusengen";
 
     } else if (losecount > 6) {
         $(lose).text(losecount);
@@ -485,13 +503,12 @@ $(jisouryoku_3).on("click", function () {
     // 自走力Lv3攻撃の最後のかっこ
 });
 
-
 // 攻撃（p2p）Lv3
 $(p2p_3).on("click", function () {
     $("#jikkyou_1").text("P2Pを使った！");
     console.log("P2Pを使った");
     // プレイヤーの攻撃
-    const attack_p2p_3 = playerStatus_3["p2p"] * playerStatus_3["level"] * losecount + 0.5;
+    const attack_p2p_3 = playerStatus_3["p2p"] * playerStatus_3["level"] * losecount + 1;
     console.log("わたしの攻撃力" + attack_p2p_3);
     //  敵の攻撃
     const min = 1;
@@ -539,11 +556,13 @@ $(p2p_3).on("click", function () {
         location.href = "#syourisengen";
 
     } else if (playerStatus_3["hp"] < 0) {
-        alert("敗北...");
+        $("#jikkyou_1").text("残念！");
+        $("#jikkyou_2").text("あなたは謎エラーを解決できなかった・・・");
         endGame = true;
         // プレイヤーの体力が０以下になったら、体力を０に再定義
         playerStatus_3["hp"] = 0;
         $("#currentPlayerHp").val(playerStatus_3["hp"]);
+        location.href = "#haibokusengen";
 
     } else if (losecount > 6) {
         $(lose).text(losecount);
@@ -559,7 +578,7 @@ $(tutor).on("click", function () {
     $("#jikkyou_1").text("チューターに質問した！");
     console.log("チューターに質問した");
     // プレイヤーの攻撃
-    const attack_tutor_3 = playerStatus_3["p2p"] * playerStatus_3["level"] * losecount + 0.5;
+    const attack_tutor_3 = playerStatus_3["p2p"] * playerStatus_3["level"] * losecount + 1;
     console.log("わたしの攻撃力" + attack_tutor_3);
     //  敵の攻撃
     const min = 1;
@@ -607,11 +626,13 @@ $(tutor).on("click", function () {
         location.href = "#syourisengen";
 
     } else if (playerStatus_3["hp"] < 0) {
-        alert("敗北...");
+        $("#jikkyou_1").text("残念！");
+        $("#jikkyou_2").text("あなたは謎エラーを解決できなかった・・・");
         endGame = true;
         // プレイヤーの体力が０以下になったら、体力を０に再定義
         playerStatus_3["hp"] = 0;
         $("#currentPlayerHp").val(playerStatus_3["hp"]);
+        location.href = "#haibokusengen";
 
     } else if (losecount > 6) {
         $(lose).text(losecount);
